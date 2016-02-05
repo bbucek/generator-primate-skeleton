@@ -29,7 +29,7 @@ module.exports = generators.Base.extend({
     // fs.copy - see https://github.com/sboudrias/mem-fs-editor
     // this.templatePath() - copies from templates folder
     // this.destinationPath() - Write to here
-    this.fs.copy(this.templatePath('stylesheets/test.scss'), this.destinationPath('app/stylesheets/test.scss'));
+    this.fs.copy(this.templatePath('stylesheets/screen.scss'), this.destinationPath('app/stylesheets/screen.scss'));
   }
 
 });

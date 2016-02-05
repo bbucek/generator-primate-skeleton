@@ -1,0 +1,119 @@
+//*
+// BASE FONT DEFINITOIN (body copy)
+//*
+$base_font_size_px: 16;
+body {
+  font-size: $base_font_size_px * 1px;
+
+  //
+  // @include respond-to-less-than($intermediate) {
+  //   font-size: 90%;
+  // }
+}
+
+//*
+// FONT FAMLIES
+//*
+$brandon: "brandon-grotesque",sans-serif;
+$merriweather: "merriweather",serif;
+
+//*
+// FONT FAMILY VARIATIONS
+//*
+$brandon_medium: (font_family: $brandon, font_weight: 500, font_style: normal);
+$brandon_bold: (font_family: $brandon, font_weight: 700, font_style: normal);
+$brandon_black: (font_family: $brandon, font_weight: 900, font_style: normal);
+
+$merriweather_regular: (font_family: $merriweather, font_weight: 400, font_style: normal);
+$merriweather_bold: (font_family: $merriweather, font_weight: 700, font_style: normal);
+$merriweather_light_italic: (font_family: $merriweather, font_weight: 300, font_style: italic);
+
+//*
+// FONT STYLES
+//*
+//----------------- HEADER 1 ----------------- //
+// $header_1: (
+//   size_px: 38, line_height_baseline: 4.3, margin_bottom_baseline: 0,
+//   color: grey(4), font_antialiased: true, uppercase: true,
+//   breakpoints: (
+//     ($intermediate 74 6)
+//   )
+// );
+// $header_1: map-merge($header_1, $brandon_medium);
+
+
+// //----------------- HEADER 2 ----------------- //
+// $header_2: (
+//   size_px: 22, line_height_baseline: 2.2, margin_bottom_baseline: 1,
+//   color: grey(4), font_antialiased: true, uppercase: true,
+//   breakpoints: (
+//     ($intermediate 26 2.33)
+//   )
+// );
+// $header_2: map-merge($header_2, $brandon_bold);
+
+
+// //----------------- HEADER 3 ----------------- //
+// $header_3: (
+//   size_px: 14, line_height_baseline: 2.16, margin_bottom_baseline: 0,
+//   color: grey(4), font_antialiased: true, uppercase: true
+// );
+// $header_3: map-merge($header_3, $brandon_bold);
+
+
+// //----------------- PARA ----------------- //
+// $para: (
+//   size_px: 15, line_height_baseline: 2.16, margin_bottom_baseline: 0,
+//   color: grey(2), font_antialiased: true
+// );
+// $para: map-merge($para, $merriweather_regular);
+
+
+// //----------------- BIG PARA ----------------- //
+// $big_para: (
+//   size_px: 17, line_height_baseline: 2.2, margin_bottom_baseline: 0,
+//   color: grey(2), font_antialiased: true,
+//   breakpoints: (
+//     ($intermediate 16 2.667)
+//   )
+// );
+// $big_para: map-merge($big_para, $merriweather_regular);
+
+
+//----------------- SMALL PARA ----------------- //
+// $small_para: (
+//   size_px: 14, line_height_baseline: 1.5, margin_bottom_baseline: 1,
+//   color: black
+// );
+// $small_para: map-merge($small_para, $merriweather_regular);
+
+
+//----------------- ACTION (links) ----------------- //
+// $action: (
+//   size_px: 15, line_height_baseline: 2, margin_bottom_baseline: 0,
+//   color: black, font_antialiased: true
+// );
+// $action: map-merge($action, $brandon_bold);
+
+
+//----------------- STRAPLINE ----------------- //
+// $strapline: (
+//   size_px: 26, line_height_baseline: 2.5, margin_bottom_baseline: 2,
+//   color: black, font_antialiased: true
+// );
+// $strapline: map-merge($strapline, $merriweather_regular);
+
+
+//*
+// GENERATE STYLES AND PLACEHOLDERS
+//*
+// $my_list: (header_1: $header_1, header_2: $header_2, header_3: $header_3, para: $para, big_para: $big_para, small_para: $small_para, action: $action, strapline: $strapline);
+
+@each $font, $map in $my_list {
+
+  .#{$font},
+  %#{$font} {
+    @include generate_font_styles($map);
+  }
+
+}

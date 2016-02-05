@@ -1,0 +1,74 @@
+//*
+// GRID VARIABLES
+//*
+$max_width: 1146;
+$col_amount: 12;
+$col_width_px: 68;
+$gutter_width_px: 30;
+$outside_gutter_px: 20px;
+$outside_gutter_em: calculate-em(16px, $outside_gutter_px);
+
+//*
+// CALCULATED GRID VARIABLES
+//*
+$max_width_px: $max-width * 1px;
+$max_width_em: calculate-em(16px, $max_width_px);
+$col_width: ($col_width_px / $max-width) * 100;
+$gutter_width: ($gutter_width_px / $max-width) * 100;;
+
+
+//*
+// BASELINE (12px)
+//*
+$bl_px: 12px;
+$bl: calculate-em(16px, $bl_px);
+
+// *
+// VERTICAL SPACINGS
+// *
+$mobile_vert_padding: $bl*5;
+$medium_vert_padding: $bl*8;
+
+//*
+// BREAKPOINTS
+//*
+$very_large: 87.5em;
+$large_intermediate: 73.75em;
+$large: 71.625em; // Which is the max-width of the wrapper
+$medium: 56em;
+$intermediate: 48em;
+$small: 36em;
+
+//*
+// JAVASCRIP BREAKPOINT ELEMENT
+//*
+#breakpoint_element {
+  position: relative; z-index: 0; // Webkit will not allow z-index to be returned to JS unless positioned
+}
+@include respond-to($small) { #breakpoint_element { z-index: 36; } }
+@include respond-to($intermediate) { #breakpoint_element { z-index: 48; } }
+@include respond-to($medium) { #breakpoint_element { z-index: 56; } }
+
+//*
+// WRAPPER
+//*
+@mixin wrapper {
+  padding-left: calculate-em(16px, $outside_gutter_px); padding-right: calculate-em(16px, $outside_gutter_px); margin: 0 auto;  max-width: $max_width_px;
+}
+
+.wrapper { @include wrapper; }
+%wrapper { @include wrapper; }
+
+@mixin remove-wrapper {
+  padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0; max-width: none;
+}
+@mixin wrapper-full-width {
+  max-width: initial;
+}
+@mixin breakout-wrapper-gutter {
+  margin-left: -(calculate-em(16px, $outside_gutter_px)); margin-right: -(calculate-em(16px, $outside_gutter_px));
+}
+@mixin wrapper-gutter {
+  padding-left: calculate-em(16px, $outside_gutter_px); padding-right: calculate-em(16px, $outside_gutter_px);
+}
+

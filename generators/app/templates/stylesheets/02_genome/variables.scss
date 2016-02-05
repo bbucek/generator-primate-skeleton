@@ -1,0 +1,31 @@
+//*
+// COLORS
+//*
+$black: black;
+$white: white;
+
+// $grey: #F7F7F7;
+// $grey_stack: #F7F7F7 #D6D6D6 #8F8F8F #6f6f6f #303030;
+// // Grey order: (0)background, (1)border, (2) text, (3) dark text, (4) black
+
+// @function grey($index: 0) {
+//   @return flat-color-stack($index, $colours: $grey_stack, $base_colour: $grey);
+// }
+
+//*
+// SITEWIDE SIZES
+//*
+
+//*
+// BORDERS
+//*
+$default_border: 0.15em solid grey(1);
+
+//*
+// BREAKPOINTS
+//*
+
+
+//*
+// RADIUS
+//*

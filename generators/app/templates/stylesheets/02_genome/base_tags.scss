@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+//*
+// Text styles
+//*
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+p {}
+a {
+  text-decoration: none;
+}
+strong {}
+em {}
+
+//*
+// List styles
+//  Please define all versions of lists here.
+//*
+ul {
+
+  &.styled_list {}
+}
+ol {}
+
+//*
+// Form styles
+//*
+form {
+}

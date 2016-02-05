@@ -1,0 +1,50 @@
+//*
+// ICON FONT IMPORT AND DEFINITION
+//*
+@font-face {
+  font-family: 'icomoon';
+  src:    url('/icons/icomoon.eot?nq57d5');
+  src:    url('/icons/icomoon.eot?nq57d5#iefix') format('embedded-opentype'),
+      url('/icons/icomoon.woff2?nq57d5') format('woff2'),
+      url('/icons/icomoon.ttf?nq57d5') format('truetype'),
+      url('/icons/icomoon.woff?nq57d5') format('woff'),
+      url('/icons/icomoon.svg?nq57d5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$icon_font: 'icomoon';
+
+//*
+// ICON GENERATION MIXINS
+//  For both icon fonts, and image sprites.
+//*
+
+// GENERATE EXTEND ICON - FOR FONT ICONS (using icomoon)
+@mixin generate_extend_icon($content) {
+  content: $content;
+  font-family: $icon_font; font-style: normal; font-weight: normal; text-transform: none; -webkit-font-smoothing: antialiased; speak: none;
+}
+
+// GENERATE CLASS SELECTOR ICON - FOR FONT ICONS (using icomoon)
+@mixin generate_icon($name, $content, $font-size, $line-height, $margin: 0 0 0 0, $color: black) {
+  .icon_#{$name}:before {
+    content: $content; margin: $margin;
+    font-size: $font-size; line-height: $line-height; color: $color;
+  }
+}
+
+//*
+// EXTEND ICON DEFINITIONS
+//*
+%icon_cross { @include generate_extend_icon("\e900"); }
+%icon_down_triangle { @include generate_extend_icon("\e901"); }
+%icon_burger { @include generate_extend_icon("\e902"); }
+
+
+//*
+// INCLUDE ICON DEFINITIONS
+//*
+@mixin icon_cross { @include generate_extend_icon("\e900"); }
+@mixin icon_down_triangle { @include generate_extend_icon("\e901"); }
+@mixin icon_burger { @include generate_extend_icon("\e902"); }
