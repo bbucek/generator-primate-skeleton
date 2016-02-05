@@ -1,0 +1,18 @@
+{
+  "name": "generator-primate-skeleton",
+  "version": "0.1.0",
+  "description": "Base front-end file structure for Primate projects",
+  "files": [
+    "generators/app",
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.20.2"
+  },
+  "devDependencies": {
+    "mkdirpd": "^0.1.8"
+  }
+}
