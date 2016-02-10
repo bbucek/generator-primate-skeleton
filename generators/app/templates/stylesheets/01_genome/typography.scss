@@ -14,19 +14,10 @@ body {
 //*
 // FONT FAMLIES
 //*
-$brandon: "brandon-grotesque",sans-serif;
-$merriweather: "merriweather",serif;
 
 //*
 // FONT FAMILY VARIATIONS
 //*
-$brandon_medium: (font_family: $brandon, font_weight: 500, font_style: normal);
-$brandon_bold: (font_family: $brandon, font_weight: 700, font_style: normal);
-$brandon_black: (font_family: $brandon, font_weight: 900, font_style: normal);
-
-$merriweather_regular: (font_family: $merriweather, font_weight: 400, font_style: normal);
-$merriweather_bold: (font_family: $merriweather, font_weight: 700, font_style: normal);
-$merriweather_light_italic: (font_family: $merriweather, font_weight: 300, font_style: italic);
 
 //*
 // FONT STYLES
@@ -107,6 +98,7 @@ $merriweather_light_italic: (font_family: $merriweather, font_weight: 300, font_
 //*
 // GENERATE STYLES AND PLACEHOLDERS
 //*
+$my_list: ();
 // $my_list: (header_1: $header_1, header_2: $header_2, header_3: $header_3, para: $para, big_para: $big_para, small_para: $small_para, action: $action, strapline: $strapline);
 
 @each $font, $map in $my_list {

@@ -37,14 +37,10 @@ $icon_font: 'icomoon';
 //*
 // EXTEND ICON DEFINITIONS
 //*
-%icon_cross { @include generate_extend_icon("\e900"); }
-%icon_down_triangle { @include generate_extend_icon("\e901"); }
-%icon_burger { @include generate_extend_icon("\e902"); }
+// %icon_cross { @include generate_extend_icon("\e900"); }
 
 
 //*
 // INCLUDE ICON DEFINITIONS
 //*
-@mixin icon_cross { @include generate_extend_icon("\e900"); }
-@mixin icon_down_triangle { @include generate_extend_icon("\e901"); }
-@mixin icon_burger { @include generate_extend_icon("\e902"); }
+// @mixin icon_cross { @include generate_extend_icon("\e900"); }

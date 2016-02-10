@@ -23,11 +23,20 @@ $gutter_width: ($gutter_width_px / $max-width) * 100;;
 $bl_px: 12px;
 $bl: calculate-em(16px, $bl_px);
 
-// *
-// VERTICAL SPACINGS
-// *
-$mobile_vert_padding: $bl*5;
-$medium_vert_padding: $bl*8;
+//*
+// COLORS
+//*
+$black: black;
+$white: white;
+
+//*
+// SITEWIDE SIZES
+//*
+
+//*
+// BORDERS
+//*
+$default_border: 0.15em solid grey(1);
 
 //*
 // BREAKPOINTS
@@ -40,7 +49,17 @@ $intermediate: 48em;
 $small: 36em;
 
 //*
-// JAVASCRIP BREAKPOINT ELEMENT
+// RADIUS
+//*
+
+// *
+// VERTICAL SPACINGS
+// *
+$mobile_vert_padding: $bl*5;
+$medium_vert_padding: $bl*8;
+
+//*
+// JAVASCRIPT BREAKPOINT ELEMENT
 //*
 #breakpoint_element {
   position: relative; z-index: 0; // Webkit will not allow z-index to be returned to JS unless positioned
@@ -48,27 +67,3 @@ $small: 36em;
 @include respond-to($small) { #breakpoint_element { z-index: 36; } }
 @include respond-to($intermediate) { #breakpoint_element { z-index: 48; } }
 @include respond-to($medium) { #breakpoint_element { z-index: 56; } }
-
-//*
-// WRAPPER
-//*
-@mixin wrapper {
-  padding-left: calculate-em(16px, $outside_gutter_px); padding-right: calculate-em(16px, $outside_gutter_px); margin: 0 auto;  max-width: $max_width_px;
-}
-
-.wrapper { @include wrapper; }
-%wrapper { @include wrapper; }
-
-@mixin remove-wrapper {
-  padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0; max-width: none;
-}
-@mixin wrapper-full-width {
-  max-width: initial;
-}
-@mixin breakout-wrapper-gutter {
-  margin-left: -(calculate-em(16px, $outside_gutter_px)); margin-right: -(calculate-em(16px, $outside_gutter_px));
-}
-@mixin wrapper-gutter {
-  padding-left: calculate-em(16px, $outside_gutter_px); padding-right: calculate-em(16px, $outside_gutter_px);
-}
-
